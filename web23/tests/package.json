@@ -1,0 +1,30 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@ethereum-waffle/chai": "^3.4.4",
+    "@ethereum-waffle/mock-contract": "^3.4.4",
+    "@ethereum-waffle/provider": "^3.4.4",
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.0",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.6.1",
+    "hardhat": "^2.9.1"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.4.0",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
+    "@openzeppelin/contracts": "^4.5.0",
+    "@openzeppelin/contracts-upgradeable": "^4.5.2",
+    "@pancakeswap-libs/pancake-swap-core": "^0.1.0",
+    "@uniswap/v2-core": "^1.0.1",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
+    "pancakeswap-peripheral": "^1.1.0-beta.0"
+  },
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy": "npx hardhat run --network testnet scripts/deploy.js"
+  }
+}
