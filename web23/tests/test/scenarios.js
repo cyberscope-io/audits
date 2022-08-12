@@ -1,31 +1,11 @@
 const { use, expect } = require("chai");
 const { utils, ethers } = require("ethers");
-const { MockProvider } = require("@ethereum-waffle/provider");
-const { deployMockContract } = require("@ethereum-waffle/mock-contract");
-const { solidity, deployContract } = require("ethereum-waffle");
-
-const DomainWeb23Contract = require("../artifacts/contracts/DomainWeb23.sol/DomainWeb23.json");
-const IHederaTokenServiceContract = require("../artifacts/contracts/IHederaTokenService.sol/IHederaTokenService.json");
+const { solidity } = require("ethereum-waffle");
+const setup = require("./setup");
 
 use(solidity);
 
 describe("DomainWeb23", () => {
-  const setup = async () => {
-    const [sender, receiver] = new MockProvider().getWallets();
-    const iHederaTokenServiceContract = await deployMockContract(
-      sender,
-      IHederaTokenServiceContract.abi
-    );
-
-    const hbarToken = "0x000000000000000000000000000000000000dddd";
-
-    const contract = await deployContract(sender, DomainWeb23Contract, [
-      hbarToken,
-    ]);
-
-    return { sender, receiver, contract, iHederaTokenServiceContract };
-  };
-
   it("should receive a payment and mint successfully (1, 6)", async () => {
     const { contract, iHederaTokenServiceContract } = await setup();
 
