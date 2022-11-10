@@ -1,0 +1,24 @@
+{
+  "name": "maxity",
+  "version": "1.0.0",
+  "description": "maxity unit tests",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "@nomiclabs/hardhat-etherscan": "^3.1.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.8.0",
+    "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
+    "ethereum-waffle": "^3.2.0",
+    "ethers": "^5.0.0",
+    "hardhat": "^2.12.2"
+  },
+  "scripts": {
+    "clean": "npx hardhat clean",
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy": "npx hardhat run --network testnet scripts/deploy.js"
+  }
+}
